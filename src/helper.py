@@ -52,7 +52,7 @@ def extract_keywords_tfidf(texts, n=5):
     top_keywords = []
 
     for i in range(tfidf_matrix.shape[0]):
-        tfidf_scores = tfidf_matrix[i].T.todense()
+        tfidf_scores = tfidf_matrix[i].T.todense() # type: ignore
         sorted_indices = tfidf_scores.argsort(axis=0)[::-1]
         top_n = [feature_names[index[0, 0]] for index in sorted_indices[:n]]
         top_keywords.append(top_n)
