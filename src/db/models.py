@@ -1,8 +1,8 @@
 from sqlalchemy import Column, String, Integer, Text, TIMESTAMP, ForeignKey
-import sys
-sys.path.append('../')
+# import sys
+# sys.path.append('../')
 
-from src.db_config import Base
+from db.db_config import Base
 
 class Article(Base):
     __tablename__ = 'articles'

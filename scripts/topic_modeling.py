@@ -18,6 +18,6 @@ def perform_topic_modeling_by_lda(df, n_topics=10, n_words=10):
     topics = []
     for index, topic in enumerate(lda.components_):
         topic_words = [vectorizer.get_feature_names_out()[i] for i in topic.argsort()[-n_words:]]
-        topics.append(' '.join(topic_words))
+        topics.append(' '.join(topic_words)) # type: ignore
     
     return lda, topics, vectorizer

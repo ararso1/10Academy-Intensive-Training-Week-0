@@ -1,8 +1,8 @@
-import sys
-sys.path.append('../')
+# import sys
+# sys.path.append('../')
 
-from src.models import *
-from src.db_config import engine, Base, SessionLocal
+from db.models import *
+from db.db_config import engine, Base, SessionLocal
 import pandas as pd
 
 # Create all tables
@@ -15,9 +15,9 @@ def load_data(data_df):
 
     # Convert data to dictionaries for insertion
     articles_data = data_df[['article_id', 'source_name', 'published_at', 'title', 'full_content']].to_dict(orient='records')
-    topics_data = [{'topic_keywords': ', '.join(topics[i]), 'article_id': row['article_id']} for i, row in data_df.iterrows()]
+    topics_data = [{'topic_keywords': ', '.join(topics[i]), 'article_id': row['article_id']} for i, row in data_df.iterrows()] # type: ignore
     events_data = [{'event_description': row['event_description'], 'article_id': row['article_id']} for i, row in data_df.iterrows()]
-    features_data = [{'article_id': row['article_id'], 'tfidf_vector': str(tfidf_matrix[i].toarray()), 'topic': row['topic'], 'event_cluster': row['event_cluster']} for i, row in data_df.iterrows()]
+    features_data = [{'article_id': row['article_id'], 'tfidf_vector': str(tfidf_matrix[i].toarray()), 'topic': row['topic'], 'event_cluster': row['event_cluster']} for i, row in data_df.iterrows()] # type: ignore
 
     try:
         # Insert data into tables

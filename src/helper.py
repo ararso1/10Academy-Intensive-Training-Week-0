@@ -64,7 +64,7 @@ def extract_keywords_tfidf(texts, n=5):
 def calculate_similarity(keywords1, keywords2):
     vectorizer = TfidfVectorizer().fit([' '.join(keywords1), ' '.join(keywords2)])
     tfidf_matrix = vectorizer.transform([' '.join(keywords1), ' '.join(keywords2)])
-    return cosine_similarity(tfidf_matrix[0:1], tfidf_matrix[1:2])[0][0]
+    return cosine_similarity(tfidf_matrix[0:1], tfidf_matrix[1:2])[0][0] # type: ignore
 
 
 # Topic modeling function
