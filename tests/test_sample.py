@@ -1,12 +1,7 @@
-# tests/test_analysis.py
-import pytest
-import unittest
-
-# tests/test_sample.py
 
 import unittest
 
-class TestSample(unittest.TestCase):
+class test_Sample(unittest.TestCase):
     def test_addition(self):
         self.assertEqual(1 + 1, 2)
 
