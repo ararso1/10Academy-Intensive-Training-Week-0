@@ -1,5 +1,7 @@
 ##########################
-# KEDRO PROJECT
+docs/
+docs/data/
+
 
 # ignore all local configuration
 conf/local/**
