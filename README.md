@@ -7,7 +7,7 @@ This project focuses on analyzing global news articles using data science techni
 
 ## **Project Structure**
 
-
+```markdown
 WEEK-0/
 ├── .github/
 │   └── workflows/
@@ -36,7 +36,7 @@ WEEK-0/
 ├── Dockerfile                     # Dockerfile for containerizing the application
 ├── main.py                        # Main script to run the full project
 └── requirements.txt               # Python dependencies list
-
+```
 
 ## **Getting Started** 
 
