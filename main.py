@@ -13,19 +13,19 @@ def main():
     print("Initializing database...")
     init_db()
     
-    print("Executing Jupyter notebook...")
-    notebook_path = 'notebooks/parse_news_data.ipynb'  # Update this with the path to your notebook
-    output_notebook_path = 'notebooks/parse_news_data_output.ipynb'
+    # print("Executing Jupyter notebook...")
+    # notebook_path = 'notebooks/parse_news_data.ipynb'  # Update this with the path to your notebook
+    # output_notebook_path = 'notebooks/parse_news_data_output.ipynb'
     
-    # Run the notebook
-    pm.execute_notebook(
-        notebook_path,
-        output_notebook_path
-    )
+    # # Run the notebook
+    # pm.execute_notebook(
+    #     notebook_path,
+    #     output_notebook_path
+    # )
 
     # Run the Streamlit dashboard
     print("Launching Streamlit dashboard...")
-    dashboard_path = 'src/dashboards.py'
+    dashboard_path = 'src/dashboard.py'
     subprocess.run(["streamlit", "run", dashboard_path])
     
     print("Project execution completed.")
